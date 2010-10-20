@@ -1,0 +1,51 @@
+-------------------------------------------------------------------------------
+  Copyright 2006-2009
+    Dan Roozemond, d.a.roozemond@tue.nl, (TU Eindhoven, Netherlands)
+    Peter Horn, horn@math.uni-kassel.de (University Kassel, Germany)
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-------------------------------------------------------------------------------
+
+This is the org.symcomp Java library. The full documentation may be found
+on http://java.symcomp.org/ .
+
+-------------------
+BUILDING THE THINGS
+-------------------
+Maven (http://maven.apache.org) is required to build the library. 
+Once you have installed maven, simply type
+
+  $ mvn install
+
+to compile the relevant parts and install the jars into your local
+maven repository. The documentation may be similarly compiled, by
+
+  $ mvn javadoc:javadoc
+
+
+----------------
+USING THE THINGS
+----------------
+Examples of the use of the library may be found in
+
+* framework-demo: Sample SCSCP server and clients,
+* openmath-converter: Converting between different OpenMath representations 
+  using the OpenMath library.
+
+All these examples may be built by building the library first (as described
+above) and the typing 
+
+  $ mvn compile
+
+in the corresponding directory.
+

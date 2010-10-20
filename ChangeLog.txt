@@ -1,0 +1,77 @@
+Version 1.5
+* openmath: Fairly major rewrite for Scala support
+* openmath: Redesign of automatic encoding detection and consequent parsing/rendering (r3365)
+* openmath: BinaryRenderer now automatically wraps its input in an OMOBJ (r3385)
+* openmath: Fixed minor bug with binary parsing (r3386)
+* openmath: Fixed OMF hex field rendering and parsing (r3621)
+* openmath: "not" is no longer a special unary symbol in Popcorn (r3626)
+* openmath: Added addTranslation to PopcornHelper to enable private abbreviations (r3614)
+* scscp: Support for SCSCP 1.4 (r3365 - r3377), including
+   - <?scscp encodings supported="..." ?>
+   - Respond in same encoding as request was given in
+   - Adjusted format for automatically generated references
+   - Support for option_return_cookie_persistent (will return "not supported" error)
+   - Major overhaul of SCSCPClient socket negotiation code (r3377)
+* framework-demo: Added example how an SCSCP client could use option_return_cookie (r3368)
+
+Version 1.4
+* openmath: Improved error handling/reporting for XML rendering (r3210)
+* openmath: Improved error handling/reporting for XML parsing (r3211)
+* openmath: Improved debugging output for OMForeign tests (r3222)
+* openmath: Fixed bug where logic1.and would render as "or" in popcorn (r3223)
+* openmath: Fixed incorrect rendering of OMForeign contents with Java 1.6 (r3224)
+* openmath: Fixed use of relation1.le and .ge instead of .leq and .geq (r3226)
+* openmath: Fixed repeated use of relation1.implies instead of logic1.implies (r3228)
+* openmath: Added many tests for infix operators (r3228)
+* openmath: Major overhaul of Popcorn string handling (incl. escaping) (r3231)
+* openmath: Now single quotes can be used to produce evil atoms, e.g.
+            'a-b'.c for <OMS cd="a-b" name="c"/> (r3233, r3234)
+* openmath: Turned off the XML declaration in front of all OpenMath XML objects (r3255)
+* openmath: Added many shortcuts for OpenMath symbols in Popcorn (r3259)
+* openmath: Changed XML encoding to UTF-8 instead of ISO-8859-1 (r3260)
+* openmath: Fixed bug in the binary representation of attributions (r3278)
+* scscp: Overhaul of option_return_ constructs in ProcedureCall etc. (r3239)
+
+Version 1.3.1
+* scscp: Fixed off-by-one error in C3PO that would cause SCSCP messages to be incorrectly
+  parsed (r3090)
+* openmath: Fixed precedence bug in Popcorn rendering (r3150)
+* openmath: Fixed unary_minus parsing "bug" in Popcorn (r3192)
+
+Version 1.3
+* openmath: Fixed minor bug in Popcorn rendering (r2871)
+* openmath: Major overhaul of AbstractRenderer, PopcornRenderer, and LatexRenderer; 
+  in particular the "Writer out" has been removed from all methods (r2868, r2890)
+* openmath: Added caching of (almost) all introspection magic to AbstractRenderer (r2893)
+* openmath: Added tests for writing to and reading from files (r2871, r2872, r2873)
+
+Version 1.2
+* openmath: Support for OMBinary (r2801, r2802, r2805, r2806, r2808, r2809)
+* openmath: Support for OMFOREIGN (r2817, r2823, r2827, r2840, r2841)
+
+Version 1.1.1
+* scscp: Fixed version negotiation bug in SCSCPClient (r2752)
+* scscp: Fixed problem with wrapping procedure_calls (r2755)
+* openmath: Fixed precedence bugs in Popcorn Parser, Popcorn Renderer, en LaTeX Renderer (r2768)
+
+Version 1.1.0
+* misc: Various small fixes and improvements
+* misc: Created a Change log (r2677)
+* misc: Removed old groovy-dependency from framework-demo
+* openmath: complete rewrite of Popcorn grammar and (consequently) parser 
+* openmath: support for hex OMI's (r2607, r2609, r2620, r2704)
+  In particular: OMInteger.intValue() is now deprecated. See the API documentation.
+* openmath: fixed OMF rendering in XML (r2608)
+* openmath: fixed Popcorn attribute rendering (r2618)
+* scscp: added cleanup() procedure to C3PO so that a server may cleanup e.g. started external processes (r2579)
+* scscp: fixed procedure_completed message in case option_return_nothing was specified (r2584)
+* scscp: redesigned option mechanism in ProcedureCall (r2668)
+* scscp: SCSCPClient.getResult() does not return an OMOBJ anymore, just an OpenMathBase (r2668)
+* scscp: SCSCPClient.quit() now properly sends a quit to the socket and the closes it (r2676)
+* scscp: Added 1.2 to supported SCSCP versions in SCSCPClient (since it supports both 1.2 and 1.3) (r2696)
+* scscp: Reorganization of Computation, ProcedureCall, etc. (r2706 - r2719)
+  (So major that we actually almost considered making this Version 1.5!)
+* scscp: Better organization of logging in SCSCPServer, SCSCPSpawner, and C3PO (r2722, r2724)
+ 
+Version 1.0.0
+* Initial Release

@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------
+  Copyright 2006-2009
+    Dan Roozemond, d.a.roozemond@tue.nl, (TU Eindhoven, Netherlands)
+    Peter Horn, horn@math.uni-kassel.de (University Kassel, Germany)
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+---------------------------------------------------------------------------
+
+OpenMath Converter
+
+The purpose of this tool is to convert between different OpenMath
+representations. It is using the org.symcomp.openmath library to do so
+and supports import from and output to
+* OpenMath 2.0 XML
+* OpenMath 2.0 Binary
+* OpenMath 2.0 compressed binary
+* POPCORN
+
+The app takes two arguments: <XML|BIN|CBIN|POP> infile
+where the first arg determines the type of the output, and the
+second is the input file. The format of the input file is determined
+autmatically.
+
+********* BUILDING *********
+
+Prerequisites:
+  * Java >= 5
+  * Maven2, http://maven.apache.org/
+  * the org.symcomp.openmath library
+  all other dependencies are resolved by maven automagically
+
+Getting the Sources:
+  * If you're reading this, you have already got the sources.
+
+Building:
+  * in the basedir issue 'mvn install',
+    this installs the libraries in you local maven-repository
+    (whatever this is, don't care)
+  * openmath-converter issue 'mvn compile'
+    and see whether it all works out.
+  * the run.sh-script does building and starting in one step
+
+If you don't have a bash:
+  *  openmath-converter issue
+     'mvn assembly:assembly' and find a file
+     target/openmath-converter-[version]-jar-with-dependencies.jar
+  *  This, you can call the hard way:
+     > java -jar target/openmath-converter-[version]-jar-with-dependencies.jar <XML|BIN|CBIN|POP> infile
+
